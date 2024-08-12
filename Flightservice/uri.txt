@@ -1,0 +1,19 @@
+//Post
+http://localhost:8787/saveFlight
+
+Request body
+
+{
+    "flight_name": "AirIndia",
+    "source": "INDIA",
+    "destination": "USA",
+    "doj": "2024-08-12",
+    "noofseats_avl": 50,
+    "ticket_price": 35000.25,
+    "class_name": "ECONOMY"
+}
+
+Response Body
+1: is saved sucessfully
+
+
