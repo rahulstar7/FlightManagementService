@@ -1,0 +1,8 @@
+http://localhost:8686/adminlogin/user/RAHUL/password/RATHO
+http://localhost:8686/createAdmin
+{
+  "name":"RAHUL",
+  "password":"RATHOD"
+}
+
+http://localhost:8686/adminlogin/user/RAHUL/password/RATHOD

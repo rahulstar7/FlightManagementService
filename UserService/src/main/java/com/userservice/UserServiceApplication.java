@@ -1,19 +1,16 @@
-package com.flightservice;
+package com.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
-public class FlightserviceApplication {
+public class UserServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FlightserviceApplication.class, args);
-		System.out.println("Flight service is up and running...");
-
+		SpringApplication.run(UserServiceApplication.class, args);
+	System.out.println("User Service is up and running ......");
 	}
 
 }

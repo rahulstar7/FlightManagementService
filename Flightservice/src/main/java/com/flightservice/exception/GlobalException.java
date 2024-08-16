@@ -12,7 +12,19 @@ public class GlobalException {
 	public ResponseEntity<ErrorResponse> getError(FlightNotFoundException exception) {
 	
 		ErrorResponse errorResponse = new ErrorResponse();
-		errorResponse.setMsg(exception.getMessage());
+		errorResponse.setMsg(exception.getMsg());
 		return new ResponseEntity<ErrorResponse>(errorResponse, HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(AuthenticationException.class)
+	public ResponseEntity<ErrorResponse> getError(AuthenticationException ex)
+	{
+		
+		ErrorResponse errorResponse = new ErrorResponse();
+		errorResponse.setMsg(ex.getMsg());
+		 
+		
+		return new ResponseEntity<ErrorResponse>(errorResponse,HttpStatus.NOT_FOUND);
+		
 	}
 }

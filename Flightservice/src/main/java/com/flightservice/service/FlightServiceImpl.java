@@ -38,7 +38,7 @@ public class FlightServiceImpl {
 			existingFlight.setClass_name(flight.getClass_name());
 			existingFlight.setDestination(flight.getDestination());
 			existingFlight.setDoj(flight.getDoj());
-			existingFlight.setFlight_id(flight.getFlight_id());
+			
 			existingFlight.setFlight_name(flight.getFlight_name());
 			existingFlight.setNoofseats_avl(flight.getNoofseats_avl());
 			existingFlight.setSource(flight.getSource());
