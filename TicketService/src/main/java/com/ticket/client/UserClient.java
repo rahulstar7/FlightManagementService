@@ -1,17 +1,16 @@
-package com.flightservice.client;
+package com.ticket.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient(name="UserService", url = "localhost:8686")
-public interface UserFeignClient {
+@FeignClient(name = "UserService",url="localhost:8686")
+public interface UserClient {
 
-	@GetMapping(value="/admin/getMsg")
-	public String getAdminMsg();
 	
 	
 	@GetMapping(value = "/tavellerservice/getMessage")
 	public String getUserMsg();
 	
+
 	
 }
