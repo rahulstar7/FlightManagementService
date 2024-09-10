@@ -16,6 +16,9 @@ import com.flightservice.exception.AuthenticationException;
 import com.flightservice.model.Flight;
 import com.flightservice.service.FlightServiceImpl;
 
+import feign.RetryableException;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 @RestController
 public class FlightController {
 
@@ -28,6 +31,7 @@ public class FlightController {
 	private UserFeignClient userClient;
 	
 	@PostMapping(value = "/saveFlight")
+	@CircuitBreaker(name = "Flightservice" ,fallbackMethod = "fallBackReponse")
 	public String saveFlight(@RequestBody Flight flight) {
 		String message = null;
 		String msg = userClient.getAdminMsg();
@@ -42,6 +46,10 @@ public class FlightController {
 		return message;
 	}
 	
+	public String fallBackReponse(RetryableException e)
+	{
+		return "Sorry sever down .....!";
+	}
 	@PutMapping(value="/updateFlight/flightid/{flightid}")
 	public String updateFlight(@PathVariable("flightid") Integer flightid, @RequestBody Flight flight)
 	{
